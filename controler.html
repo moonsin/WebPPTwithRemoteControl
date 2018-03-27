@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+      crossorigin="anonymous"></script>
+    <title></title>
+</head>
+
+<body style="background-color: #34495e;">
+
+    <div id="operation" style="border-radius: 300px; height: 50px; width: 50px; background-color:#c0392b;"></div>
+    <center>
+        <table>
+            <tr>
+                <td></td>
+                <td><img class="ctl_btn up" style='width:60px'cmd="up" src="images/arrow_up.png" /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td ><img class="ctl_btn left" style='width:60px' cmd="left" src="images/arrow_left.png" /></td>
+                <td></td>
+                <td><img class="ctl_btn right" style='width:60px' cmd="right" src="images/arrow_right.png" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><img class="ctl_btn down" style='width:60px' cmd="down" src="images/arrow_down.png" /></td>
+                <td></td>
+            </tr>
+
+
+        </table>
+    </center>
+
+    <script >
+    var CONTROLLER = 0;
+
+    var OP_UP = 0;
+    var OP_DOWN = 1;
+        var OP_LEFT = 2;
+        var OP_RIGHT = 3;
+
+    $(function () {
+
+            var socket = new WebSocket('ws://localhost:3000');
+
+        socket.onopen = function () {
+            $('#operation').css('background-color', '#2ecc71');
+        };
+
+        socket.onclose = function () {
+            $('#operation').css('background-color', '#c0392b');
+        };
+
+        socket.onerror = function (event) {
+            console.dir(event);
+        };
+
+        $('.up').click(function () {
+            var data = {};
+                        data.sender = CONTROLLER;
+                        data.action = OP_UP;
+
+            console.log(JSON.stringify(data));
+
+                        socket.send(JSON.stringify(data));  
+        });
+
+        $('.down').click(function () {
+            var data = {};
+                        data.sender = CONTROLLER;
+                        data.action = OP_DOWN;
+
+            console.log(JSON.stringify(data));
+
+                        socket.send(JSON.stringify(data));  
+        });
+
+        $('.left').click(function () {
+            console.log('zzz');
+            var data = {};
+                        data.sender = CONTROLLER;
+                        data.action = OP_LEFT;
+
+            console.log(JSON.stringify(data));
+
+                        socket.send(JSON.stringify(data));  
+        });
+
+        $('.right').click(function () {
+            var data = {};
+                        data.sender = CONTROLLER;
+                        data.action = OP_RIGHT;
+
+            console.log(JSON.stringify(data));
+
+                        socket.send(JSON.stringify(data));  
+        });
+    });
+    </script>
+</body>
+</html>

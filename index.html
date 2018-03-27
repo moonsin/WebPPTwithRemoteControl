@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Encryption</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <script type="text/javascript" src="./js/remote.js"></script>
+    <style>
+        h1,
+        h2 {
+            color: #F8F8F8 !important;
+        }
+        
+        img {
+            box-shadow: 0 0 0 '#FFF'!important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides" style='color:#F8F8F8'>
+            <section data-background-iframe="./test.html" data-background-interactive>
+                <h1> Encryption </h1>
+                <p>Yang Zhou</p>
+                <img style="width:120px;border-radius:50%;border:1px solid #FFF" data-lazy-loaded src='./lib/pic/zy.png' />
+                <p> yz12a17@soton.ac.uk </p>
+            </section>
+            <!--
+                <section data-background-color="#000000">
+                    <img style="width:100px;border:0px solid #FFF;" data-lazy-loaded src='./lib/pic/Flag_of_China.png' /> 
+                </section>
+-->
+            <section data-background-color="#000">
+                <h2>Definition</h2>
+                <h2>uses</h2>
+                <h2>types</h2>
+            </section>
+            <section>
+                <section data-background-color="#000">
+                    <h2>Definition</h2>
+                </section>
+                <section data-background-color="#FFF" style="color:'#2C428C'">
+                    <p> <strong>Encryption</strong> </p>
+                    <img style="border:0px solid #FFF;height:210px;" class='plain fragment' data-lazy-loaded src='./lib/pic/Public_key_encryption_keys.png' />
+                    <p class='fragment'> <strong>Hash Function</strong> </p>
+                    <div class='fragment'>
+                        <img style="border:0px solid #FFF;height:160px;" class='plain' data-lazy-loaded src='./lib/pic/hash.png' />
+                        <p style='font-size:11px;margin-top:10px'> source: https://commons.wikimedia.org/wiki/File:Public_key_encryption_keys.png</p>
+                    </div>
+                </section>
+            </section>
+            <section data-background-color="#000">
+                <h2>uses</h2>
+                <p>Data Security</p>
+                <p>Massage Verification</p>
+            </section>
+            <section data-background-color="#000">
+                <section data-background-color="#000">
+                    <h2>Types</h2>
+                    <p>Symmetric-key Algorithma</p>
+                    <p>Public-key Cryptography</p>
+                </section>
+                <section data-background-color="#FFF" style="color:'#2C428C'">
+                    <p> <strong>Symmetric-key Algorithma</strong> </p>
+                    <img style="border:0px solid #FFF;" class='plain' data-lazy-loaded src='./lib/pic/Symmetric-key.png' />
+                    <p style='font-size:12px;margin-top:10px'> source: https://commons.wikimedia.org/wiki/File:Public_key_encryption_keys.png</p>
+                </section>
+                <section data-background-color="#FFF" style="color:'#2C428C'">
+                    <p> <strong>Public-key Cryptography</strong> </p>
+                    <img style="border:0px solid #FFF;" class='plain' data-lazy-loaded src='./lib/pic/Public_key_encryption_keys.png' />
+                    <p style='font-size:12px;margin-top:10px'> source: https://commons.wikimedia.org/wiki/File:Public_key_encryption_keys.png</p>
+                </section>
+                <section data-background-color="#FFF" style="color:'#2C428C'">
+                    <p><strong>Public key encryption</strong></p>
+                    <img style="border:0px solid #FFF;" class='plain' data-lazy-loaded src='./lib/pic/Asymmetric_encryption.png' />
+                    <p style='font-size:12px;margin-top:10px'> https://zh.wikipedia.org/wiki/File:Asymmetric_encryption_(colored).png</p>
+                </section>
+                <section data-background-color="#FFF" style="color:'#2C428C'">
+                    <p><strong>Digital signatures</strong></p>
+                    <img style="border:0px solid #FFF;" class='plain' data-lazy-loaded src='./lib/pic/DigitalSign.png' />
+                    <p style='font-size:12px;margin-top:10px'> https://zh.wikipedia.org/wiki/File:Asymmetric_encryption_(colored).png</p>
+                </section>
+            </section>
+            <section data-background-color="#000">
+                <h2>Reference</h2>
+                <p>[1] R.L. Rivest, A. Shamir, L. Adleman. A Method for Obtaining Digital Signatures and Public Key Cryptosystems, Communications of the ACM, 1978.</p>
+                <p>[2] Robert Richardson, 2008 CSI Computer Crime and Security Survey at 19.i.cmpnet.com.</p>
+                <p>[3] Stallings, William (1990-05-03). Cryptography and Network Security: Principles and Practice. Prentice Hall. p. 165. ISBN 9780138690175.</p>
+            </section>
+            <section data-background-color="#000">
+                <a href='./RSA/open.html'>
+                    <h2> the most popular Public key cryptography </h2>
+                </a>
+            </section>
+        </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            dependencies: [{
+                    src: 'plugin/markdown/marked.js'
+                },
+                {
+                    src: 'plugin/markdown/markdown.js'
+                },
+                {
+                    src: 'plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: 'plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function() {
+                        hljs.initHighlightingOnLoad();
+                    }
+                }
+            ],
+            transition: 'slide'
+        });
+    </script>
+</body>
+
+</html>
